@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+{% block body %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Welcome to TextUtils!</strong><b> You can do anything with your text here!</b>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <form action="/analyze/" method="post">
+            {% csrf_token %}
+            <div class="form-group py-2">
+                <label for="exampleFormControlTextarea1"><b>Enter your Text here and let Text Utils do the magic
+                        :-</b></label>
+                <textarea class="form-control my-2" placeholder="Enter here : " name='text'
+                    id="exampleFormControlTextarea1" rows="15"></textarea>
+            </div>
+
+            <div class="custom-control custom-switch">
+                <input type="checkbox" name="removepunc" class="custom-control-input" id="customSwitch0">
+                <label class="custom-control-label" for="customSwitch0"><b>Remove Punctuation</b></label>
+            </div>
+
+            <div class="custom-control custom-switch">
+                <input type="checkbox" name="fullcaps" class="custom-control-input" id="customSwitch1">
+                <label class="custom-control-label" for="customSwitch1"><b>Uppercase</b></label>
+            </div>
+
+            <div class="custom-control custom-switch">
+                <input type="checkbox" name="newlineremover" class="custom-control-input" id="customSwitch2">
+                <label class="custom-control-label" for="customSwitch2"><b>New lineremover</b></label>
+            </div>
+
+            <div class="custom-control custom-switch">
+                <input type="checkbox" name="extraspaceremover" class="custom-control-input" id="customSwitch3">
+                <label class="custom-control-label" for="customSwitch3"><b>Remove extra spaces</b></label>
+            </div>
+
+            <div class="custom-control custom-switch">
+                <input type="checkbox" name="charcount" class="custom-control-input" id="customSwitch4">
+                <label class="custom-control-label" for="customSwitch4"><b>Count characters</b></label>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-dark">Analyze Text</button>
+        </form>
+    </div>
+    <br>
+    <hr class="my-1">
+
+    <footer class="text-center text-lg-start text-white" style="background-color: hsl(183, 90%, 4%)">
+        <div class="container pb-4">
+            <section class="">
+
+                <div class="row">
+                    
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                            <a href="/"><img id="logo" src="/static\freelogo.jpg" width="100px"></a>
+                        </h6>
+                        <p>
+                            <strong>Welcome to TextUtils! You can do anything with your text here!</strong>
+                        </p>
+                        <big>Some Examples :</big>
+                        <ul type="round">
+                            <li>Remove Punctuation</li>
+                            <li>Remove extraspaces</li>
+                            <li>New lineremover</li>
+                            <li>Text Uppercase</li>
+                        </ul>
+                    </div>
+                    
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Quick Links</h6>
+                        <p>
+                            <a href="/" class="text-white">Home</a>
+                        </p>
+                        <p>
+                            <a href="/about" class="text-white">About US</a>
+                        </p>
+                        <p>
+                            <a href="/contact" class="text-white">Contact Us</a>
+                        </p>
+                        <p>
+                            <a href="/logout" class="text-white">Logout</a>
+                        </p>
+                     
+                    </div>
+                    
+
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    
+                    <hr class="w-100 clearfix d-md-none" />
+
+                    
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                        <p><i class="fas fa-home mr-3"></i> Indore, IN</p>
+                        <p><i class="fas fa-envelope mr-3"></i> example@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> +91 1234 567 890</p>
+                       
+                    </div>
+                    
+
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/anupamchouhan" target="_blank"><i
+                                        class="fab fa-linkedin"></i><img id="logo"
+                                        src="/static/icons8-linkedin-circled-48.png" width="60px"></a></li>
+                            <li><a href="https://twitter.com/anupam__chouhan" target="_blank"><i
+                                        class="fab fa-twitter"></i><img id="logo" src="/static/icons8-twitter-48.png"
+                                        width="60px"></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/anupam.chouhan20/" target="_blank"><i
+                                        class="fab fa-facebook-f"></i><img id="logo"
+                                        src="/static/icons8-facebook-48.png" width="60px"></a></li>
+                            <li><a href="https://www.instagram.com/anupam_chouhan/" target="_blank"><i
+                                        class="fab fa-instagram"></i><img id="logo"
+                                        src="/static\1164349_circle_instagram_logo_media_network_icon.png"
+                                        width="50px"></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </section>
+           
+        </div>
+
+    
+        <div class="text-center p-3" style="background-color: rgba(44, 154, 62, 0.324)">
+            © 2023 Copyright:
+            <big><a class="text-white" href="/"><u>TextUtils.in</u></a></big>
+        </div>
+       
+    </footer>
+
+    {% endblock body %}
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
